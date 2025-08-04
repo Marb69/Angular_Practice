@@ -1,0 +1,28 @@
+
+.container-header{
+
+    display: flex;
+    background-color: black;
+    padding: 15px 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand{
+
+    color: white;
+    text-decoration: none;
+}
+
+.navlink{
+
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.link a {
+
+    text-decoration: none;
+    color: white;
+}
