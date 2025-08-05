@@ -1,8 +1,15 @@
 
+.container{
+
+        background-color: black;
+        width: 100%;
+}
 .container-header{
 
     display: flex;
-    background-color: black;
+      width: 100%;
+    max-width: 1200px;
+    margin: auto;
     padding: 15px 20px;
     justify-content: space-between;
     align-items: center;
@@ -25,4 +32,12 @@
 
     text-decoration: none;
     color: white;
+}
+
+@media (max-width: 600px){
+
+    .navlink{
+
+        display: none;
+    }
 }

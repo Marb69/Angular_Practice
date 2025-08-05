@@ -8,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class Main {
 
+  name = "This interpolation, Data binding";
+
+
+  isActive = false;
+  
+  toggle(){
+
+      
+    this.isActive = !this.isActive;
+  }
 }

@@ -1,1 +1,12 @@
-<p>main works!</p>
+<div class="container">
+
+    <p class="blueText">Hello Jhon main content ni!</p>
+
+    <p>{{name}}</p>
+
+    <button (click)="toggle()">Click</button>
+    <div class="content-toggle" [class.open] = "isActive">
+
+        <p class="Pcontainer" [class.visi] = "isActive">Hello pohh</p>
+    </div>
+</div>
