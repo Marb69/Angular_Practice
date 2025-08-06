@@ -1,80 +1,142 @@
 
+
 <div class="container">
 
-    
+    <h1>Databinding</h1> 
+    <h1>Controlflow</h1>
 
-    <label for="">Choose color to change the box</label>
-    <input type="text" [(ngModel)]="components">
-    
-    <div class="card w-25 h-25 bg-primary text-center" [class] = "components">
-        
-        <p>change Color</p>
+    <div class="container">
 
 
-    </div>
-  
-
-    <select (change)="changeAlert()" [(ngModel)]="name" >
-
-        <option value="Mam">Mam</option>
-         <option value="jsj">jsj</option>
-          <option value="dkhsfh">dkhsfh</option>
-    </select>
+        <div class="card w-25 p-3 m-2">
 
 
- 
-   
+            <label for="">Type a components of bootstrap to change the box</label>
+            <input type="text" [(ngModel)]="components" class="m-2 " >
 
-    <div class="container d-flex justify-content-between">
+            <div class="card  h-25 bg-primary text-center m-2" [class]="components">
 
-        <div class="card w-25 h-25 bg-white p-2 shadow-lg ">
+                <p>change the box</p>
 
-            <h4 class="fw-bolder text-dark text-center">Fillup Form</h4>
-             <label for="" >Firstname</label>
-             <input type="text" placeholder="Firstname" [(ngModel)]="firstname">
-                 <label for="">Lastname</label>
-             <input type="text" placeholder="Middlename"  [(ngModel)]="middlename">
-             <label for="">Middlename</label>
-             <input type="text" placeholder="Lastname"  [(ngModel)]="lastname">
-                  <label for="">Sex</label>
-            <select name="" id="" placeholder="Firstname" [(ngModel)]="gender">
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-               
-            </select>
 
-             <label for="">Course</label>
-                <select [(ngModel)]="course">
-                <option value="Information in Technology">IT</option>
-                <option value="Crminology">Crim</option>
-                   <option value="Education">BSED</option>
-                      <option value="Hospitaly in management">BSHM</option>
-            </select>
-
-            <button class="btn btn-success mt-2" (click)="submitForm()">Submit </button>
-                 
+            </div>
         </div>
 
-        <div class="card w-25 rounded-1 shadow ">
 
-            <h4 class="bg-primary p-2 text-center text-white">Your Information</h4>
+        <div class="container m-2">
+            <select (change)="changeAlert()" [(ngModel)]="name">
+
+                <option value="Mam">Mam</option>
+                <option value="jsj">jsj</option>
+                <option value="dkhsfh">dkhsfh</option>
+            </select>
+        </div>
 
 
-            <div class="container">
+
+
+
+
+        <div class="container d-flex justify-content-between gap-2 ">
+
+            <div class="card w-25 h-25 bg-white p-2 shadow-lg ">
+
+                <h4 class="fw-bolder text-dark text-center">Fillup Form</h4>
+                <label for="">Firstname</label>
+                <input type="text" placeholder="Firstname" [(ngModel)]="firstname" [value]="resetField">
+                <label for="">Lastname</label>
+                <input type="text" placeholder="Middlename" [(ngModel)]="middlename" [value]="resetField">
+                <label for="">Middlename</label>
+                <input type="text" placeholder="Lastname" [(ngModel)]="lastname" [value]="resetField">
+                <label for="">Sex</label>
+                <select name="" id="" placeholder="Firstname" [(ngModel)]="gender" [value]="resetField">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+
+                </select>
+
+                <label for="">Course</label>
+                <select [(ngModel)]="course" [value]="resetField">
+                    <option value="Information in Technology">IT</option>
+                    <option value="Crminology">Crim</option>
+                    <option value="Education">BSED</option>
+                    <option value="Hospitaly in management">BSHM</option>
+                </select>
+
+                <button class="btn btn-success mt-2" (click)="submitForm()">Submit </button>
+
+            </div>
+
+            <div class="card w-25 rounded-1 shadow ">
+
+                <h4 class="bg-primary p-2 text-center text-white">Your Information</h4>
+
+
+                <div class="container">
 
                     <label for="" class="fw-bold text-info">Fullname</label>
                     <p>{{fullname}}</p>
-            
-            <label for="" class="fw-bold  text-info">Gender</label>
-            <p>{{genders}}</p>
-            
-            <label for="" class="fw-bold  text-info">Course</label>
-            <p>{{courses}}</p>
-            </div>
-        
-            
-        </div>
-    </div>
-</div>
 
-    
+                    <label for="" class="fw-bold  text-info">Gender</label>
+                    <p>{{genders}}</p>
+
+                    <label for="" class="fw-bold  text-info">Course</label>
+                    <p>{{courses}}</p>
+
+                    <label for="" class="fw-bold  text-info">Teacher</label>
+                    <p>{{selectedStudent}}</p>
+                </div>
+
+
+
+            </div>
+
+            <div class="card w-25 rounded-1 shadow ">
+
+                <div class="container p-2">
+
+                    <select [(ngModel)]="selectedS" [value]="resetField">
+                        @for (item of studentName; track $index) {
+
+                        <option [value]="item">{{item}}</option>
+                        }
+                    </select>
+
+                </div>
+            </div>
+
+              <div class="card w-25">
+
+            <div class="container">
+
+                <table class="w-100  border-1">
+                    <tr>
+                     <th>Name</th>
+                     <th>Gender</th>
+                     <th>Course</th>
+                    </tr>
+                    @for (item of studentList; track $index) {
+
+                        <tr>
+                            <td>{{item.name}}</td>
+                            <td>{{item.sex}}</td>
+                            <td>{{item.program}}</td>
+                        </tr>
+                        
+                    }
+                </table>
+                
+            </div>
+        </div>
+
+        </div>
+
+      
+    </div>
+
+
+
+
+
+
+</div>

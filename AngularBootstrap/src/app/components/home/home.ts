@@ -42,7 +42,9 @@ export class Home {
   fullname!:string;
   courses: string = "N/A";
   genders: string = "N/A";
-
+  selectedStudent: string = "N/A";
+  selectedS!: string;
+   resetField!: string;
   submitForm(){
 
    if(this.firstname==undefined || this.middlename == undefined || this.lastname==undefined){
@@ -55,10 +57,29 @@ export class Home {
       this.fullname = this.firstname + ' ' + this.middlename + ' ' + this.lastname;
       this.courses = this.course;
       this.genders = this.gender;
+     this.selectedStudent = this.selectedS;
+     this.resetField = " ";
+
+
+
+
    }
 
   
     
 
   }
+
+
+  studentName: string[] = ["Jhon Alvert","Marbebe","Jessie"];
+
+
+  studentList: any [] = [
+    {name:"Jhon",sex:"Male",program:"Dit"},
+     {name:"Jhon",sex:"Male",program:"Dit"},
+      {name:"Jhon",sex:"Male",program:"Dit"},
+       {name:"Jhon",sex:"Male",program:"Dit"}
+  ];
+
+
 }
