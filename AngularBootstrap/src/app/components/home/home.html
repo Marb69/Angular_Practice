@@ -2,7 +2,79 @@
 <div class="container">
 
     
-    <h1 class="text-black">Home</h1>
+
+    <label for="">Choose color to change the box</label>
+    <input type="text" [(ngModel)]="components">
+    
+    <div class="card w-25 h-25 bg-primary text-center" [class] = "components">
+        
+        <p>change Color</p>
+
+
+    </div>
+  
+
+    <select (change)="changeAlert()" [(ngModel)]="name" >
+
+        <option value="Mam">Mam</option>
+         <option value="jsj">jsj</option>
+          <option value="dkhsfh">dkhsfh</option>
+    </select>
+
+
+ 
+   
+
+    <div class="container d-flex justify-content-between">
+
+        <div class="card w-25 h-25 bg-white p-2 shadow-lg ">
+
+            <h4 class="fw-bolder text-dark text-center">Fillup Form</h4>
+             <label for="" >Firstname</label>
+             <input type="text" placeholder="Firstname" [(ngModel)]="firstname">
+                 <label for="">Lastname</label>
+             <input type="text" placeholder="Middlename"  [(ngModel)]="middlename">
+             <label for="">Middlename</label>
+             <input type="text" placeholder="Lastname"  [(ngModel)]="lastname">
+                  <label for="">Sex</label>
+            <select name="" id="" placeholder="Firstname" [(ngModel)]="gender">
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+               
+            </select>
+
+             <label for="">Course</label>
+                <select [(ngModel)]="course">
+                <option value="Information in Technology">IT</option>
+                <option value="Crminology">Crim</option>
+                   <option value="Education">BSED</option>
+                      <option value="Hospitaly in management">BSHM</option>
+            </select>
+
+            <button class="btn btn-success mt-2" (click)="submitForm()">Submit </button>
+                 
+        </div>
+
+        <div class="card w-25 rounded-1 shadow ">
+
+            <h4 class="bg-primary p-2 text-center text-white">Your Information</h4>
+
+
+            <div class="container">
+
+                    <label for="" class="fw-bold text-info">Fullname</label>
+                    <p>{{fullname}}</p>
+            
+            <label for="" class="fw-bold  text-info">Gender</label>
+            <p>{{genders}}</p>
+            
+            <label for="" class="fw-bold  text-info">Course</label>
+            <p>{{courses}}</p>
+            </div>
+        
+            
+        </div>
+    </div>
 </div>
 
     
