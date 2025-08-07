@@ -1,0 +1,51 @@
+
+
+ <div class="container-fluid min-vh-100 bg-white text-white ">
+
+
+    <div class="container my-2 ">
+
+        <h1 class="text-black">GET API Busbooking userlist from API</h1>
+
+        <div class="row ">
+
+             <div class="container d-flex align-content-center">
+                <div class="col-12 text-black ">
+             
+
+                    <table class="table-bordered table">
+
+                        <thead >
+                       <tr>
+                         <th  class="bg-success  text-white ">ID</th>
+                         <th  class="bg-success  text-white ">Username</th>
+                         <th class="bg-info  text-white ">Fullname</th>
+                          <th class="bg-info  text-white ">Email</th>
+                          <th class="bg-info  text-white ">Role</th>
+                       </tr>
+                    </thead>
+
+                    <tbody>
+                        
+                        @for (item of userList; track $index) {
+
+                            <tr>
+                                <td>{{item.userId}}</td>
+                                 <td>{{item.userName}}</td>
+                                  <td>{{item.fullName}}</td>
+                                   <td>{{item.emailId}}</td>
+                                    <td>{{item.role}}</td>
+                            </tr>
+                        }
+                    </tbody>
+                    </table>
+            </div>
+                      
+        </div>
+
+      
+
+    </div>
+</div>
+
+

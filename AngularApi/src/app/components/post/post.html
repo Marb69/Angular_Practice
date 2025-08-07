@@ -1,0 +1,97 @@
+
+<div class="container p-3">
+
+    <div class="row">
+
+        <div class="col-5">
+
+            <div class="card">
+
+                <div class="card-header bg-primary">
+
+                <h4 class="text-white">Register new User</h4>
+            </div>
+
+
+            <div class="card-body">
+
+                <div class="row">
+                
+                    <div class="col">
+                         <label for="">Fullname</label>
+                    <input type="text" class="form-control" [(ngModel)]="regiteredUser.fullName">
+                    </div>
+                
+                </div>
+                  <div class="row">
+                
+                    <div class="col">
+                         <label for="">Email</label>
+                    <input type="text" class="form-control" [(ngModel)]="regiteredUser.emailId">
+                    </div>
+                    <div class="col">
+                         <label for="">Password</label>
+                    <input type="text" class="form-control" [(ngModel)]="regiteredUser.password">
+                    </div>
+                </div>
+                 <div class="row">
+                
+                    <div class="col-6 ">
+                     <label for="">Mobile Number</label>
+                    <input type="text" class="form-control" [(ngModel)]="regiteredUser.mobileNo">
+                    </div>
+
+                     <div class="col d-flex align-items-center">
+                      
+                            <button class="btn btn-success" (click)="postUser()">Submit</button>
+                                    
+                    </div>
+                
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="col-7">
+
+            <div class="card">
+
+                <div class="card-header bg-primary text-white">
+
+                <h4>User List</h4>
+            </div>
+
+
+            <div class="card-body">
+
+                <table class="table-bordered table">
+
+                    <thead class="text-white">
+                        <th class="bg-primary">Index</th>
+                        <th class="bg-primary">Fullname</th>
+                        <th class="bg-primary">Email Id</th>
+                        <th class="bg-primary">Password</th>
+                        <th class="bg-primary">Mobile No.</th>
+                    </thead>
+                    <tbody class="table-primary ">
+                        
+                        @for (item of displayUser; track $index) {
+
+                            <tr >
+                                <td>{{$index + 1}}</td>
+                                 <td>{{item.fullName}}</td>
+                                 <td>{{item.emailId}}</td>
+                                  <td>{{item.password}}</td>
+                                  <td>{{item.mobileNo}}</td>
+                                  
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
