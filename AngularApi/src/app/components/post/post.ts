@@ -44,9 +44,18 @@ export class Post implements OnInit {
 
      getUser(){
 
-      this.http.get("https://api.freeprojectapi.com/api/GoalTracker/getAllUsers").subscribe((users:any) =>{
-        this.displayUser = users;
-      })
+      this.http.get("https://api.freeprojectapi.com/api/GoalTracker/getAllUsers").subscribe({
+          
+          next:(userss: any)=>{
+
+            this.displayUser =  userss;
+             
+          },
+          error:(errors)=>{
+
+            alert('Errors ' + errors.errors);
+            
+          }})
         
      }
 
@@ -55,7 +64,7 @@ export class Post implements OnInit {
        
            this.http.post("https://api.freeprojectapi.com/api/GoalTracker/register",this.regiteredUser).subscribe({
           
-          next:(res)=>{
+          next:()=>{
 
              alert("User created");
              this.getUser();
@@ -69,5 +78,63 @@ export class Post implements OnInit {
       
      }
 
+     updateUser(){
+
+      this.regiteredUser.createdDate = new Date;
+         this.http.put("https://api.freeprojectapi.com/api/GoalTracker/updateUser?id=" + this.regiteredUser.userId,this.regiteredUser).subscribe(
+          {
+            next:()=>{
+
+                     alert("Update user");
+                     this.getUser();
+             
+
+            },
+            error:(error) =>{
+              alert("error" + error.error);
+            }
+          }
+         );
+     }
+
+     editUser(item:any){
+
+      this.regiteredUser = item;
+
+
+     }
+
+     resetField(){
+
+
+      this.regiteredUser = {
+
+         "userId": 0,
+            "emailId": " ",
+            "password": " ",
+            "fullName": " ",
+            "mobileNo": " "
+
+      }
+     }
+
+     deleteUser(id:number){
+
+
+       this.http.delete("https://api.freeprojectapi.com/api/GoalTracker/deleteUserById?id=" + id).subscribe(
+          {
+            next:()=>{
+
+                     alert("Delete user");
+                    this.getUser();
+
+            },
+            error:(error) =>{
+              alert("error" + error.error);
+            }
+          }
+         );
+        
+     }
   
 }
