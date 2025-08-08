@@ -24,4 +24,5 @@ export const routes: Routes = [
         path:'delete',
         component:Delete
     }
+    
 ];

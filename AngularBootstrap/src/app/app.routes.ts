@@ -7,7 +7,7 @@ import { Project } from './components/project/project';
 export const routes: Routes = [
 
     {
-        path:'home',
+        path:'Home',
         component:Home
     },
     {
