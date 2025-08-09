@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit, Signal } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { User } from '../user/user';
 
 
@@ -28,7 +28,7 @@ export class Admin implements OnInit {
 
 
     userId: new FormControl(0),
-    emailId: new FormControl(""),
+    emailId: new FormControl("",[Validators.required,Validators.email]),
     fullName: new FormControl(""),
     password: new FormControl(""),
     mobileNo: new FormControl()

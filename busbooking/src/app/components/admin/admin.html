@@ -21,6 +21,19 @@
 
               <label for="" class="form-label">Email</label>
               <input type="text" class="input-group form-control" placeholder="example@.gmail" required formControlName="emailId" >
+              @if (registeredUser.controls['emailId'].touched) {
+
+                     @if(registeredUser.controls['emailId'].errors?.['required']){
+                        
+                       <span>Invalid field</span>
+                     }
+
+                     @if (registeredUser.controls['emailId'].errors?.['email']) {
+
+                         <span class="text-danger">Email must be correct</span>
+                       
+                     }
+              }
             </div>
          
           </div>
