@@ -1,0 +1,60 @@
+
+
+<div class="container min-vh-100 d-flex justify-content-center align-items-center">
+
+
+    <div class="card w-25 shadow ">
+
+
+
+
+        <div class="card-body ">
+            <p class="text-center fw-bold fs-4 ">Login</p>
+
+
+          <form [formGroup]="logIn" >
+
+              <div class="row">
+                <div class="col">
+                    <label for="" class="form-label">Email</label>
+                    <input type="text" class="form-control  " formControlName="admin" name="admin">
+                    @if(logIn.controls['admin'].touched){
+
+                        @if(logIn.controls['admin'].errors?.['required']){
+
+                            <span class="text-danger">required</span>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <label for="" class="form-label">Password</label>
+                    <input type="password" class="form-control" formControlName="password" name="password">
+                       @if(logIn.controls['password'].touched){
+
+                        @if(logIn.controls['password'].errors?.['required']){
+
+                            <span class="text-danger">required</span>
+                        }
+                    }
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+
+                    <button class="btn btn-primary mt-2 input-group " (click)="LogIn()">Log in</button>
+                    <div class="input-group">
+                        <span>Don't have an account? <a routerLink="signup">Sign up now!</a></span> 
+                    </div>
+                </div>
+
+            </div>
+          </form>
+
+        </div>
+
+
+    </div>
+
+</div>
