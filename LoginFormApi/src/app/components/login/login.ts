@@ -33,6 +33,10 @@ export class Login {
 
                  this.router.navigateByUrl('/dashboard');
       }
+      else{
+
+        alert("Email or password are invalid");
+      }
  
     
     }

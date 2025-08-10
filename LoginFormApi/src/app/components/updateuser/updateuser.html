@@ -1,0 +1,122 @@
+<div class="container p-3">
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <h3>All user</h3>
+        </div>
+
+        <div class="card-body ">
+
+
+            <div class="container-scroll overflow-y-auto d-flex flex-column gap-2 container-scroll">
+
+                
+                @for (item of dataUser; track $index) {
+
+                    <div class="card bg-info text-white card-body ">
+
+                              <div class="row">
+                    <div class="col">
+
+                        <b>Fullname</b>
+                        <p>{{item.fullName}}</p>
+                    </div>
+                      <div class="col">
+
+                        <b>Email</b>
+                         <p>{{item.emailId}}</p>
+                    </div>
+                      <div class="col">
+
+                        <b>Mobile no.</b>
+                         <p>{{item.mobileNo}}</p>
+                    </div>
+                      <div class="col">
+
+                        <b>Password</b>
+                        <p>{{item.password}}</p>
+                    </div>
+
+                    <div class="col d-flex align-items-center">
+
+                       <div class="btn-group">
+                         <button class="btn btn-primary" (click)="edit(item.userId)">Edit</button>
+                           
+                       </div>
+                       
+                    </div>
+                </div>
+
+                    </div>
+                  
+                }
+            
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid">
+
+
+    <div class="row">
+
+        <div class="col">
+
+            <div class="container p-2">
+
+                <div class="card">
+
+                    <div class="card-header">
+
+                        <h4>Register user</h4>
+                    </div>
+
+                    <div class="card-body">
+
+                       <form action="" [formGroup]="formUpdate">
+
+
+                         <div class="row">
+                            <div class="col">
+                                <label for="Firstname" class="form-label">Fullname</label>
+                                <input type="text" class="form-control" formControlName="fullname">
+                            </div>
+                  
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="Firstname" class="form-label">Email</label>
+                                <input type="email" class="form-control" formControlName="email">
+                            </div>
+                            <div class="col">
+                                <label for="Firstname" class="form-label">Mobile no.</label>
+                                <input type="tel" class="form-control" formControlName="mobileno">
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col-4">
+                                <label for="Firstname" class="form-label">Password</label>
+                                <input type="email" class="form-control" formControlName="password">
+                            </div>
+
+                 
+                        </div>
+                        <div class="row mt-2">
+
+                            <div class="col">
+                                <button class="btn btn-primary" (click)="updateUser()" >update</button>
+                            </div>
+                        </div>
+                       </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+

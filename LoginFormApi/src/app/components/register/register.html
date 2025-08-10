@@ -1,52 +1,70 @@
 <div class="container-fluid">
 
 
-    <div class="row bg-info">
-        <div class="col"> <h3 class="text-white">Register</h3></div>
-    </div>
     <div class="row">
 
         <div class="col">
 
-           <div class="container p-2">
-            
-            <div class="card">
+            <div class="container p-2">
 
-                <div class="card-header">
+                <div class="card">
 
-                    <h4>Register user</h4>
-                </div>
+                    <div class="card-header">
 
-                <div class="card-body">
-
-                    <div class="row">
-                        <div class="col">
-                            <label for="Firstname" class="form-label">Firstname</label>
-                            <input type="text" class="form-control">
-                        </div>
-                         <div class="col">
-                            <label for="Firstname" class="form-label">Midlename</label>
-                            <input type="text" class="form-control">
-                        </div>
-                         <div class="col">
-                            <label for="Firstname" class="form-label">Lastname</label>
-                            <input type="text" class="form-control">
-                        </div>
+                        <h4>Register user</h4>
                     </div>
-                     <div class="row">
-                        <div class="col">
-                            <label for="Firstname" class="form-label">Email</label>
-                            <input type="email" class="form-control">
+
+                    <div class="card-body">
+
+                       <form action="" [formGroup]="dataUser">
+
+
+                         <div class="row">
+                            <div class="col">
+                                <label for="Firstname" class="form-label">Firstname</label>
+                                <input type="text" class="form-control" formControlName="fname">
+                            </div>
+                            <div class="col">
+                                <label for="Firstname" class="form-label">Midlename</label>
+                                <input type="text" class="form-control" formControlName="mname">
+                            </div>
+                            <div class="col">
+                                <label for="Firstname" class="form-label">Lastname</label>
+                                <input type="text" class="form-control" formControlName="lname">
+                            </div>
                         </div>
-                         <div class="col">
-                            <label for="Firstname" class="form-label">Mobile no.</label>
-                            <input type="tel" class="form-control">
+                        <div class="row">
+                            <div class="col">
+                                <label for="Firstname" class="form-label">Email</label>
+                                <input type="email" class="form-control" formControlName="email">
+                            </div>
+                            <div class="col">
+                                <label for="Firstname" class="form-label">Mobile no.</label>
+                                <input type="tel" class="form-control" formControlName="mobileno">
+                            </div>
+
                         </div>
-                         
+                        <div class="row">
+                            <div class="col-4">
+                                <label for="Firstname" class="form-label">Password</label>
+                                <input type="email" class="form-control" formControlName="pass">
+                            </div>
+
+                 
+                        </div>
+                        <div class="row mt-2">
+
+                            <div class="col">
+                                <button class="btn btn-primary" (click)="onRegister()">Register</button>
+                            </div>
+                        </div>
+                       </form>
                     </div>
                 </div>
             </div>
-           </div>
         </div>
+
     </div>
+
+
 </div>

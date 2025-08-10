@@ -1,0 +1,59 @@
+<div class="container p-3">
+
+    <div class="card">
+
+        <div class="card-header">
+
+            <h3>All user</h3>
+        </div>
+
+        <div class="card-body ">
+
+
+            <div class="container-scroll overflow-y-auto d-flex flex-column gap-2">
+
+                
+                @for (item of dataUser; track $index) {
+
+                    <div class="card bg-info text-white card-body   height-user">
+
+                              <div class="row ">
+                    <div class="col">
+
+                        <b>Fullname</b>
+                        <p>{{item.fullName}}</p>
+                    </div>
+                      <div class="col">
+
+                        <b>Email</b>
+                         <p>{{item.emailId}}</p>
+                    </div>
+                      <div class="col">
+
+                        <b>Mobile no.</b>
+                         <p>{{item.mobileNo}}</p>
+                    </div>
+                      <div class="col">
+
+                        <b>Password</b>
+                        <p>{{item.password}}</p>
+                    </div>
+
+                    <div class="col d-flex align-items-center">
+
+                       <div class="btn-group">
+                         <button class="btn btn-primary">Edit</button>
+                            <button class="btn btn-danger"  (click)="delete(item.userId)">Delete</button>
+                       </div>
+                       
+                    </div>
+                </div>
+
+                    </div>
+                  
+                }
+            
+            </div>
+        </div>
+    </div>
+</div>

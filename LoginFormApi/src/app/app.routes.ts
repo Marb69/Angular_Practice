@@ -5,6 +5,8 @@ import { Customer } from './components/customer/customer';
 import { SignupForm } from './components/signup-form/signup-form';
 import { Dashboard } from './components/dashboard/dashboard';
 import { Register } from './components/register/register';
+import { Alluser } from './components/alluser/alluser';
+import { Updateuser } from './components/updateuser/updateuser';
 
 export const routes: Routes = [
 
@@ -46,6 +48,14 @@ export const routes: Routes = [
 
                 path:'customer',
                 component:Customer
+            },{
+
+                path:'alluser',
+                component:Alluser
+            },{
+
+                path:'updateuser',
+                component:Updateuser
             }
         ]
     }
