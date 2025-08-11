@@ -1,0 +1,55 @@
+
+<div class="container mt-3">
+
+
+    <div class="row">
+
+    <div class="col-3">
+
+   <form action="" [formGroup]="pokemonData">
+        <div class="input-group">
+
+       
+
+            
+                  <input type="text" class="form-control" formControlName="name">
+                  <button class="btn btn-primary" (click)="search()">Search</button>
+        
+
+        </div>
+  
+  </form>
+    </div>
+
+
+</div>
+
+<div class="row">
+
+    <div class="col">
+       <div class="container mt-3">
+
+    <div class="card w-25">
+
+    <div class="card-header">
+    
+        <img src="{{data.sprites.front_default}}" alt="" class="w-100">
+
+    </div>
+
+    <div class="card-body">
+
+        <p>Pokemon name: <span>{{data.name}}</span> </p> 
+         <p>Base Experience: <span>{{data.base_experience}}</span> </p> 
+          <p>Height: <span>{{data.height}}</span> </p> 
+            <p>Weight: <span>{{data.weight}}</span> </p> 
+            
+        
+
+    </div>
+</div>  
+</div>
+
+    </div>
+</div>
+</div>

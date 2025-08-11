@@ -96,6 +96,7 @@ const idus = this.iduser;
     debugger;
  this.http.put("https://api.freeprojectapi.com/api/GoalTracker/updateUser?id=" + idus,updatedUser).subscribe({
 
+
       next:()=>{
 
      
@@ -111,6 +112,7 @@ const idus = this.iduser;
 
     })
 
+    console.log(idus);
 
   }
 
