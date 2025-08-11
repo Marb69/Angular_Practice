@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { Master } from '../../services/master';
 
 
 @Component({
@@ -13,7 +14,7 @@ export class Updateuser {
 
   
   http = inject(HttpClient);
-
+ masterService = inject(Master);
 
   ngOnInit(): void {
       
@@ -30,7 +31,7 @@ export class Updateuser {
   allUser(){
 
 
-     this.http.get("https://api.freeprojectapi.com/api/GoalTracker/getAllUsers").subscribe({
+    this.masterService.getAllUser().subscribe({
 
       next:(data: any) =>{
 
@@ -57,7 +58,7 @@ export class Updateuser {
     debugger;
     this.iduser = id;
      
-    this.http.get("https://api.freeprojectapi.com/api/GoalTracker/getUserById?id=" + id).subscribe({
+  this.masterService.getUser(id).subscribe({
 
       
       next:(res:any)=>{
@@ -74,6 +75,10 @@ export class Updateuser {
            
           
         );
+      },
+      error:(error)=>{
+
+        alert("error " + error.error);
       }
     })
 
@@ -83,7 +88,7 @@ export class Updateuser {
  
   updateUser(){
 
-const idus = this.iduser;
+
 
     let updatedUser: any = {
 
@@ -91,10 +96,11 @@ const idus = this.iduser;
       password: this.formUpdate.value.password,
       fullName: this.formUpdate.value.fullname,
       mobileNo: this.formUpdate.value.mobileno,
-      createdDate: this.createdate
+      createdDate: this.createdate,
+      projectName: ''
     }
     debugger;
- this.http.put("https://api.freeprojectapi.com/api/GoalTracker/updateUser?id=" + idus,updatedUser).subscribe({
+ this.masterService.update(this.iduser,updatedUser).subscribe({
 
 
       next:()=>{
@@ -112,7 +118,7 @@ const idus = this.iduser;
 
     })
 
-    console.log(idus);
+    console.log(this.iduser);
 
   }
 

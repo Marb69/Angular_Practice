@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Master } from '../../services/master';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +11,7 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 })
 export class Register {
 
+  masterService = inject(Master);
   http = inject(HttpClient);
 
  dataUser: FormGroup = new FormGroup({
@@ -40,7 +42,8 @@ export class Register {
    
  }
     debugger;
-      this.http.post("https://api.freeprojectapi.com/api/GoalTracker/register",registeredUser).subscribe({
+ 
+   this.masterService.addUser(registeredUser).subscribe({
 
         next: ()=>{
            

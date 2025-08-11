@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
+import { Master } from '../../services/master';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-alluser',
@@ -10,9 +12,10 @@ import { Component, inject, OnInit } from '@angular/core';
 export class Alluser implements OnInit {
 
 
-
+ router = inject(Router);
   http = inject(HttpClient);
 
+  masterService = inject(Master);
 
   ngOnInit(): void {
       
@@ -29,7 +32,7 @@ export class Alluser implements OnInit {
   allUser(){
 
 
-     this.http.get("https://api.freeprojectapi.com/api/GoalTracker/getAllUsers").subscribe({
+   this.masterService.getAllUser().subscribe({
 
       next:(data: any) =>{
 
@@ -42,7 +45,7 @@ export class Alluser implements OnInit {
 
   delete(id: number){
 
-     this.http.delete("https://api.freeprojectapi.com/api/GoalTracker/deleteUserById?id="+ id).subscribe({
+    this.masterService.delete(id).subscribe({
 
       next:()=>{
 
@@ -55,6 +58,11 @@ export class Alluser implements OnInit {
       }
 
      })
+  }
+
+  navEdit(){
+
+     this.router.navigateByUrl("/updateuser")
   }
   
 }
