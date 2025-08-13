@@ -1,0 +1,44 @@
+
+<div class="row">
+    <div class="col-3">
+        <div class="input-group">
+<form action="" [formGroup]="addStudent">
+
+     
+    <input type="text" class="form-control" placeholder="Your name" formControlName="name">
+    <input type="text" class="form-control" placeholder="Your age" formControlName="age">
+</form>
+      <button class="btn btn-primary" (click)="add()">Add</button>
+</div>
+    </div>
+</div>
+
+<table class="table">
+
+    <thead>
+
+        <th>Index</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Action</th>
+    </thead>
+
+    <tbody>
+
+        @for (item of listStudent; track $index) {
+
+
+            <tr>
+                <td>{{$index+1}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>   <div class="input-group">
+                  
+               <button class="btn btn-danger" (click)="delete($index)">Delete</button>
+                </div></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+

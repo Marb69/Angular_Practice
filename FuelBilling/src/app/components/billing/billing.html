@@ -1,0 +1,58 @@
+
+<div class="container-fluid p-0 ">
+
+    <h3 class="bg-success p-2 text-white">Fuel Billing</h3>
+    <div class="container-fluid overflow-y-auto scroll-table">
+
+
+        <table class="table table-bordered table table">
+
+        <thead class="table-info  ">
+
+           <tr >
+            
+            <th class="sticky-top thead fw-medium ">Bill Id.</th>
+             <th class="sticky-top thead fw-medium ">Bill No.</th>
+                <th class="sticky-top thead fw-medium ">Bill Date.</th>
+            <th class="sticky-top thead fw-medium ">Station Id.</th>
+            <th class="sticky-top thead fw-medium ">Station Name.</th>
+            <th class="sticky-top thead fw-medium ">Amount.</th>
+            <th class="sticky-top thead fw-medium ">FundSource Id.</th>
+             <th class="sticky-top thead fw-medium ">FundSource Name.</th>
+        
+             
+           </tr>
+
+
+          
+        </thead>
+
+        <tbody>
+         
+          @for (data of responseD; track $index) {
+
+            <tr>
+                
+                <td>{{data.billId}}</td>
+                <td>{{data.billNo}}</td>
+                <td>{{data.billDate}}</td>
+                  <td>{{data.stationId}}</td>
+                    <td>{{data.stationName}}</td>
+                    <td>{{data.amount}}</td>
+                    <td>{{data.fundSourceId}}</td>
+                          <td>{{data.fundSourceName}}</td>
+                    
+
+                 
+            </tr>
+          }
+        </tbody>
+    </table>
+  
+    </div>
+    
+  
+
+
+
+</div>
